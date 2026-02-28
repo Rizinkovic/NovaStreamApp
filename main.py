@@ -36,7 +36,7 @@ class NovaStreamPro(ctk.CTk):
             try:
                 self.iconbitmap(icon_path)
             except:
-                pass # Fail silently if OS rejects icon format
+                pass 
 
         self.title("NovaStream Pro - Ultimate Downloader")
         self.geometry("900x650")
@@ -92,7 +92,7 @@ class NovaStreamPro(ctk.CTk):
         self.log_box.pack(fill="both", expand=True, pady=20)
 
         # --- Footer ---
-        self.footer = ctk.CTkLabel(self, text="Made By Rizinkovic", font=("Arial", 12, "underline"), cursor="hand2", text_color="#1f538d")
+        self.footer = ctk.CTkLabel(self, text="Made By Rizinkovic", font=("Arial", 14, "underline"), cursor="hand2", text_color="#1f538d")
         self.footer.grid(row=1, column=0, columnspan=2, pady=10)
         self.footer.bind("<Button-1>", lambda e: webbrowser.open("https://github.com/Rizinkovic"))
 
