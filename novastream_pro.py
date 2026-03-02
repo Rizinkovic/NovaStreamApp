@@ -94,10 +94,10 @@ DEFAULT_SETTINGS = {
     "mp3_quality": "128",
 }
 
-F       = 13   # base font
-F_SM    = 11   # small
-F_BTN   = 14   # buttons
-F_TITLE = 21   # sidebar title
+F       = 13   
+F_SM    = 12   
+F_BTN   = 14   
+F_TITLE = 21   
 
 
 class NovaStreamPro(ctk.CTk):
@@ -178,7 +178,7 @@ class NovaStreamPro(ctk.CTk):
         self.sidebar.grid(row=0, column=0, sticky="nsew")
         self.sidebar.grid_columnconfigure(0, weight=1)
 
-        sb = self.sidebar  # shorthand
+        sb = self.sidebar  
 
         # Title
         ctk.CTkLabel(
@@ -268,7 +268,7 @@ class NovaStreamPro(ctk.CTk):
     def _sep(self, parent, text):
         ctk.CTkFrame(parent, height=1, fg_color="gray25").pack(
             fill="x", padx=14, pady=(14, 3))
-        ctk.CTkLabel(parent, text=text, font=("Arial", 10, "bold"),
+        ctk.CTkLabel(parent, text=text, font=("Arial", 12, "bold"),
                      text_color="gray50").pack(padx=22, anchor="w", pady=(0, 2))
 
     def _lbl(self, parent, text):
@@ -585,7 +585,7 @@ class NovaStreamPro(ctk.CTk):
             "fragment_retries":             15,
             "file_access_retries":          5,
             "socket_timeout":               60,
-            "http_chunk_size":              1_048_576,   # 1 MB
+            "http_chunk_size":              1_048_576,   
             "buffersize":                   1024,
             "concurrent_fragment_downloads": 1,
             "retry_sleep_functions":        {"http": lambda n: min(4 ** n, 60)},
@@ -608,7 +608,7 @@ class NovaStreamPro(ctk.CTk):
                 fmt = "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio/best"
         else:
             if platform in ("instagram", "tiktok", "facebook", "twitter"):
-                # Try height-filtered mp4, fall back to any matching height, fall back to best
+                
                 fmt = (
                     f"best[ext=mp4][height<={q}]"
                     f"/best[height<={q}]"
